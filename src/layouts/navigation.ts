@@ -13,10 +13,30 @@ export const topLevelNav = [
     title: "Validators",
     href: "/validator/setup/overview/",
   },
+  {
+    title: "My Section",
+    href: "/customize/",
+  }
 ];
 
 export const getNavigation = (section) => {
   const nav: any[] = [];
+  if (section === "customize") {
+    nav.push({
+      header: "My Section",
+      children: [
+        {
+          title: "Hello world",
+          href: "/customize/hello/",
+        },
+        {
+          title: "Another Page",
+          href: "/customize/another-page/",
+        },
+      ],
+    });
+  }
+
   if (section === "dev") {
     nav.push({
       header: "Mobius Development Stack (MDS)",
